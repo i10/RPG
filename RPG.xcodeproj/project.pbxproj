@@ -12,7 +12,9 @@
 		FC7C41B61346031700D37AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7C41B51346031700D37AC5 /* main.m */; };
 		FC7C41B91346031700D37AC5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FC7C41B71346031700D37AC5 /* Credits.rtf */; };
 		FC7C41BC1346031700D37AC5 /* RPGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7C41BB1346031700D37AC5 /* RPGAppDelegate.m */; };
-		FC7C41BF1346031700D37AC5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7C41BD1346031700D37AC5 /* MainMenu.xib */; };
+		FC7C41C61346033200D37AC5 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = FC7C41C51346033200D37AC5 /* Icon.icns */; };
+		FC9F4FB41346267B00EE9317 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9F4FB21346267B00EE9317 /* MainMenu.xib */; };
+		FC9F4FB9134632C400EE9317 /* PasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +23,17 @@
 		FC7C41AB1346031700D37AC5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		FC7C41AC1346031700D37AC5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FC7C41AD1346031700D37AC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FC7C41B01346031700D37AC5 /* RPG-Info.plist */ = {isa = PBXFileReference; path = "RPG-Info.plist"; sourceTree = "<group>"; };
+		FC7C41B01346031700D37AC5 /* RPG-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RPG-Info.plist"; sourceTree = "<group>"; };
 		FC7C41B21346031700D37AC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FC7C41B41346031700D37AC5 /* RPG-Prefix.pch */ = {isa = PBXFileReference; path = "RPG-Prefix.pch"; sourceTree = "<group>"; };
+		FC7C41B41346031700D37AC5 /* RPG-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RPG-Prefix.pch"; sourceTree = "<group>"; };
 		FC7C41B51346031700D37AC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC7C41B81346031700D37AC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		FC7C41BA1346031700D37AC5 /* RPGAppDelegate.h */ = {isa = PBXFileReference; path = RPGAppDelegate.h; sourceTree = "<group>"; };
+		FC7C41BA1346031700D37AC5 /* RPGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPGAppDelegate.h; sourceTree = "<group>"; };
 		FC7C41BB1346031700D37AC5 /* RPGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPGAppDelegate.m; sourceTree = "<group>"; };
-		FC7C41BE1346031700D37AC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FC7C41C51346033200D37AC5 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = ../Icon.icns; sourceTree = "<group>"; };
+		FC9F4FB31346267B00EE9317 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordGenerator.h; sourceTree = "<group>"; };
+		FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordGenerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +87,11 @@
 		FC7C41AE1346031700D37AC5 /* RPG */ = {
 			isa = PBXGroup;
 			children = (
+				FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */,
+				FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */,
+				FC9F4FB21346267B00EE9317 /* MainMenu.xib */,
 				FC7C41BA1346031700D37AC5 /* RPGAppDelegate.h */,
 				FC7C41BB1346031700D37AC5 /* RPGAppDelegate.m */,
-				FC7C41BD1346031700D37AC5 /* MainMenu.xib */,
 				FC7C41AF1346031700D37AC5 /* Supporting Files */,
 			);
 			path = RPG;
@@ -93,6 +100,7 @@
 		FC7C41AF1346031700D37AC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC7C41C51346033200D37AC5 /* Icon.icns */,
 				FC7C41B01346031700D37AC5 /* RPG-Info.plist */,
 				FC7C41B11346031700D37AC5 /* InfoPlist.strings */,
 				FC7C41B41346031700D37AC5 /* RPG-Prefix.pch */,
@@ -154,7 +162,8 @@
 			files = (
 				FC7C41B31346031700D37AC5 /* InfoPlist.strings in Resources */,
 				FC7C41B91346031700D37AC5 /* Credits.rtf in Resources */,
-				FC7C41BF1346031700D37AC5 /* MainMenu.xib in Resources */,
+				FC7C41C61346033200D37AC5 /* Icon.icns in Resources */,
+				FC9F4FB41346267B00EE9317 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +176,7 @@
 			files = (
 				FC7C41B61346031700D37AC5 /* main.m in Sources */,
 				FC7C41BC1346031700D37AC5 /* RPGAppDelegate.m in Sources */,
+				FC9F4FB9134632C400EE9317 /* PasswordGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,10 +199,10 @@
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		FC7C41BD1346031700D37AC5 /* MainMenu.xib */ = {
+		FC9F4FB21346267B00EE9317 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FC7C41BE1346031700D37AC5 /* en */,
+				FC9F4FB31346267B00EE9317 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -281,6 +291,7 @@
 				FC7C41C41346031700D37AC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
