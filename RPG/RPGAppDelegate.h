@@ -20,7 +20,13 @@
 @property(assign) IBOutlet NSTextField *output;
 @property(assign) IBOutlet PasswordGenerator *passwordGenerator;
 
-- (IBAction)setPasswordLength:(NSButton *)sender;
+- (IBAction)generate:(id)sender;
+- (IBAction)generate6:(id)sender;
+- (IBAction)generate8:(id)sender;
+- (IBAction)generate12:(id)sender;
+- (IBAction)generate24:(id)sender;
+- (IBAction)generate32:(id)sender;
+
 - (IBAction)copyOutput:(id)sender;
 
 @end

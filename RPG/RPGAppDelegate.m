@@ -19,6 +19,7 @@
 - (IBAction)setPasswordLength:(NSButton *)sender;
 {
 	passwordGenerator.length = sender.title.intValue;
+	[passwordGenerator generate];
 }
 
 - (IBAction)copyOutput:(id)sender;
@@ -32,6 +33,36 @@
 
 - (IBAction)generate:(id)sender;
 {
+	[passwordGenerator generate];
+}
+
+- (IBAction)generate6:(id)sender;
+{
+	passwordGenerator.length = 6;
+	[passwordGenerator generate];
+}
+
+- (IBAction)generate8:(id)sender;
+{
+	passwordGenerator.length = 8;
+	[passwordGenerator generate];
+}
+
+- (IBAction)generate12:(id)sender;
+{
+	passwordGenerator.length = 12;
+	[passwordGenerator generate];
+}
+
+- (IBAction)generate24:(id)sender;
+{
+	passwordGenerator.length = 24;
+	[passwordGenerator generate];
+}
+
+- (IBAction)generate32:(id)sender;
+{
+	passwordGenerator.length = 32;
 	[passwordGenerator generate];
 }
 
