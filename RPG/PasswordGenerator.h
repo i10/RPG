@@ -19,7 +19,8 @@
 	BOOL useLowerLetters;
 	BOOL useUpperLetters;
 	BOOL useNumbers;
-	BOOL useSymbols;
+	BOOL useSymbols1;
+	BOOL useSymbols2;
 	NSString *exclude;
 	
 	@private
@@ -30,12 +31,13 @@
 @property(assign) BOOL useLowerLetters;
 @property(assign) BOOL useUpperLetters;
 @property(assign) BOOL useNumbers;
-@property(assign) BOOL useSymbols;
+@property(assign) BOOL useSymbols1;
+@property(assign) BOOL useSymbols2;
 @property(retain) NSString *exclude;
 
 @property(assign) IBOutlet id<PasswordGeneratorDelegate> delegate;
 
 - (void)generate;
-
+- (void)save;
 
 @end

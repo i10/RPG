@@ -16,18 +16,23 @@
 
 #pragma mark IBActions
 
-- (IBAction)setPasswordLength:(id)sender;
+- (IBAction)setPasswordLength:(NSButton *)sender;
 {
-	NSInteger length = [sender intValue];
-	
-	// update user defaults
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	[defaults setInteger:length forKey:@"passwordLength"];
+	passwordGenerator.length = sender.title.intValue;
 }
 
 - (IBAction)copyOutput:(id)sender;
 {
-	// todo
+	NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+
+	// copy the output to the paste board
+	[pasteboard clearContents];
+	[pasteboard writeObjects:[NSArray arrayWithObject:self.output.stringValue]];
+}
+
+- (IBAction)generate:(id)sender;
+{
+	[passwordGenerator generate];
 }
 
 
@@ -58,6 +63,11 @@
 	[passwordGenerator generate];
 }
 
+- (void)applicationWillTerminate:(NSNotification *)notification;
+{
+	[passwordGenerator save];
+}
+
 
 #pragma mark NSWindowDelegate
 
@@ -77,6 +87,7 @@
 - (void)passwordGenerator:(PasswordGenerator *)passwordGenerator didGeneratePassword:(NSString *)password;
 {
 	self.output.stringValue = password;
+	[self.output becomeFirstResponder];
 }
 
 @end
