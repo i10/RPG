@@ -20,7 +20,7 @@
 @synthesize length, useLowerLetters, useUpperLetters, useNumbers, useSymbols1, useSymbols2, exclude;
 @synthesize delegate;
 
-// generate the password
+// generate a password
 - (void)generate;
 {
 	NSUInteger i;
@@ -58,6 +58,7 @@
 	[self.delegate passwordGenerator:self didGeneratePassword:pw];
 }
 
+// save the configuration to the user defaults
 - (void)save;
 {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -72,6 +73,10 @@
 	[defaults setObject:self.exclude forKey:@"exclude"];
 }
 
+
+#pragma mark init & cleanup
+
+// init
 - (id)init
 {
     self = [super init];
@@ -100,6 +105,12 @@
 		
     }
     return self;
+}
+
+// cleanup
+- (void)dealloc {
+    [exclude release];
+    [super dealloc];
 }
 
 @end
