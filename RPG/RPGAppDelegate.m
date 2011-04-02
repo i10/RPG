@@ -9,11 +9,11 @@
 #import "RPGAppDelegate.h"
 #import "PasswordGenerator.h"
 
-#define kMinimizedDeltaSize 258.0
+#define kMinimizedDeltaSize 245.0
 
 @implementation RPGAppDelegate
 
-@synthesize window, mainView, output, passwordGenerator;
+@synthesize window, aboutWindow, mainView, output, passwordGenerator;
 
 
 #pragma mark IBActions
@@ -76,22 +76,7 @@
 	// init randomizer
 	srandom((int)time(0));
 	
-	// load window position from user defaults
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSPoint origin = NSMakePoint([defaults floatForKey:@"window.x"], [defaults floatForKey:@"window.y"]);
-	if(origin.x > 0 && origin.y > 0) {
-		[self.window setFrameOrigin:origin];
-	}
-	
-	// otherwise: center window
-	else
-	{
-		CGSize screenSize = [[NSScreen mainScreen] frame].size;
-		CGSize windowSize = self.window.frame.size;
-		CGPoint origin = CGPointMake((screenSize.width-windowSize.width)/2.0, (screenSize.height-windowSize.height)/2.0);
-		[self.window setFrameOrigin:origin];
-	}
-	
+	[self.window setFrameAutosaveName:@"window"];
 	// generate password
 	[passwordGenerator generate];
 }
@@ -102,55 +87,51 @@
 	[passwordGenerator save];
 }
 
-
-#pragma mark NSWindowDelegate
-
-// windows moved
-// store the new position in the defaults
-- (void)windowDidMove:(NSNotification *)notification;
-{
-	NSRect frame = [self.window frame];
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	[defaults setFloat:frame.origin.x forKey:@"window.x"];
-	[defaults setFloat:frame.origin.y forKey:@"window.y"];
-}
-
-- (void)windowDidResignKey:(NSNotification *)notification
+- (void)applicationWillResignActive:(NSNotification *)notification
 {
 	if(!windowAnimationsEnabled) return;
 	
-	CGRect frame;
+	CGRect rect;
 	
 	// move main view up
-	frame = self.mainView.frame;
-	frame.origin.y += kMinimizedDeltaSize;
-//	self.mainView.frame = frame;
+	rect = self.mainView.bounds;
+	rect.origin.y = -kMinimizedDeltaSize;
+	self.mainView.bounds = rect;
 	
 	// change window size
-	frame = self.window.frame;
-	frame.size.height -= kMinimizedDeltaSize;
-	[self.window setFrame:frame display:YES animate:YES];
-
+	rect = self.window.frame;
+	rect.size.height -= kMinimizedDeltaSize;
+	[self.window setFrame:rect display:YES animate:NO];
 }
 
-- (void)windowDidBecomeKey:(NSNotification *)notification
+- (void)applicationWillBecomeActive:(NSNotification *)notification
 {
 	if(!windowAnimationsEnabled) {
 		windowAnimationsEnabled = YES;
 		return;
 	}
 	
-	CGRect frame;
-	
-	// move main view up
-	frame = self.mainView.frame;
-	frame.origin.y -= kMinimizedDeltaSize;
-//	self.mainView.frame = frame;
+	CGRect rect;
 	
 	// change window size
-	frame = self.window.frame;
-	frame.size.height += kMinimizedDeltaSize;
-	[self.window setFrame:frame display:YES animate:YES];
+	rect = self.window.frame;
+	rect.size.height += kMinimizedDeltaSize;
+	[self.window setFrame:rect display:YES animate:NO];
+	
+	// move main view up
+	rect = self.mainView.bounds;
+	rect.origin.y = 0.0;
+	self.mainView.bounds = rect;
+	self.mainView.frame = rect;
+	
+}
+
+
+#pragma mark NSWindowDelegate
+
+- (void)windowDidResignKey:(NSNotification *)notification;
+{
+	[self.aboutWindow orderOut:self];
 }
 
 
