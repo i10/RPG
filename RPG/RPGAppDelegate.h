@@ -12,11 +12,14 @@
 @interface RPGAppDelegate : NSObject <NSApplicationDelegate, PasswordGeneratorDelegate> {
 @private
 	NSWindow *window;
+	NSView *mainView;
 	NSTextField *output;
 	PasswordGenerator *passwordGenerator;
+	BOOL windowAnimationsEnabled;
 }
 
 @property(assign) IBOutlet NSWindow *window;
+@property(assign) IBOutlet NSView *mainView;
 @property(assign) IBOutlet NSTextField *output;
 @property(assign) IBOutlet PasswordGenerator *passwordGenerator;
 

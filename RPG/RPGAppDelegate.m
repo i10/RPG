@@ -9,9 +9,11 @@
 #import "RPGAppDelegate.h"
 #import "PasswordGenerator.h"
 
+#define kMinimizedDeltaSize 258.0
+
 @implementation RPGAppDelegate
 
-@synthesize window, output, passwordGenerator;
+@synthesize window, mainView, output, passwordGenerator;
 
 
 #pragma mark IBActions
@@ -96,6 +98,7 @@
 
 - (void)applicationWillTerminate:(NSNotification *)notification;
 {
+	windowAnimationsEnabled = NO;
 	[passwordGenerator save];
 }
 
@@ -110,6 +113,44 @@
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	[defaults setFloat:frame.origin.x forKey:@"window.x"];
 	[defaults setFloat:frame.origin.y forKey:@"window.y"];
+}
+
+- (void)windowDidResignKey:(NSNotification *)notification
+{
+	if(!windowAnimationsEnabled) return;
+	
+	CGRect frame;
+	
+	// move main view up
+	frame = self.mainView.frame;
+	frame.origin.y += kMinimizedDeltaSize;
+//	self.mainView.frame = frame;
+	
+	// change window size
+	frame = self.window.frame;
+	frame.size.height -= kMinimizedDeltaSize;
+	[self.window setFrame:frame display:YES animate:YES];
+
+}
+
+- (void)windowDidBecomeKey:(NSNotification *)notification
+{
+	if(!windowAnimationsEnabled) {
+		windowAnimationsEnabled = YES;
+		return;
+	}
+	
+	CGRect frame;
+	
+	// move main view up
+	frame = self.mainView.frame;
+	frame.origin.y -= kMinimizedDeltaSize;
+//	self.mainView.frame = frame;
+	
+	// change window size
+	frame = self.window.frame;
+	frame.size.height += kMinimizedDeltaSize;
+	[self.window setFrame:frame display:YES animate:YES];
 }
 
 
