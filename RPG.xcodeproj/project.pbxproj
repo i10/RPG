@@ -15,6 +15,8 @@
 		FC7C41C61346033200D37AC5 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = FC7C41C51346033200D37AC5 /* Icon.icns */; };
 		FC9F4FB41346267B00EE9317 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9F4FB21346267B00EE9317 /* MainMenu.xib */; };
 		FC9F4FB9134632C400EE9317 /* PasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */; };
+		FCB87A6F1348D32A006FB347 /* HUDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB87A6E1348D32A006FB347 /* HUDButton.m */; };
+		FCB87A7C1348EE07006FB347 /* GraphicsHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB87A7A1348EE07006FB347 /* GraphicsHelpers.m */; };
 		FCCC01941347A5BC004DBB06 /* i10.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCC01931347A5BC004DBB06 /* i10.png */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,10 @@
 		FC9F4FB31346267B00EE9317 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordGenerator.h; sourceTree = "<group>"; };
 		FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordGenerator.m; sourceTree = "<group>"; };
+		FCB87A6D1348D32A006FB347 /* HUDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDButton.h; sourceTree = "<group>"; };
+		FCB87A6E1348D32A006FB347 /* HUDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDButton.m; sourceTree = "<group>"; };
+		FCB87A7A1348EE07006FB347 /* GraphicsHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsHelpers.m; sourceTree = "<group>"; };
+		FCB87A7B1348EE07006FB347 /* GraphicsHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsHelpers.h; sourceTree = "<group>"; };
 		FCCC01931347A5BC004DBB06 /* i10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = i10.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +95,7 @@
 		FC7C41AE1346031700D37AC5 /* RPG */ = {
 			isa = PBXGroup;
 			children = (
+				FCB87A791348EA9A006FB347 /* HUD Views */,
 				FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */,
 				FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */,
 				FC9F4FB21346267B00EE9317 /* MainMenu.xib */,
@@ -111,6 +118,17 @@
 				FC7C41B71346031700D37AC5 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCB87A791348EA9A006FB347 /* HUD Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCB87A6D1348D32A006FB347 /* HUDButton.h */,
+				FCB87A6E1348D32A006FB347 /* HUDButton.m */,
+				FCB87A7B1348EE07006FB347 /* GraphicsHelpers.h */,
+				FCB87A7A1348EE07006FB347 /* GraphicsHelpers.m */,
+			);
+			name = "HUD Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +199,8 @@
 				FC7C41B61346031700D37AC5 /* main.m in Sources */,
 				FC7C41BC1346031700D37AC5 /* RPGAppDelegate.m in Sources */,
 				FC9F4FB9134632C400EE9317 /* PasswordGenerator.m in Sources */,
+				FCB87A6F1348D32A006FB347 /* HUDButton.m in Sources */,
+				FCB87A7C1348EE07006FB347 /* GraphicsHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
