@@ -8,12 +8,18 @@
 
 #import "PasswordGenerator.h"
 
+#define kConsonants @"qwrtypsdfghjklzxcvbnm"
+#define kVowels @"euioa"
 #define kLowerLetters @"qwertyuiopasdfghjklzxcvbnm"
 #define kUpperLetters @"QWERTYUIOPASDFGHJKLZXCVBNM"
 #define kNumbers @"1234567890"
 #define kSymbols1 @"-/:;()$&@\".,?!'"
 #define kSymbols2 @"[]{}#%^*+=_\\|~<>"
 
+
+char *generateSyllable(NSUInteger maxLength) {
+	
+}
 
 @implementation PasswordGenerator
 
