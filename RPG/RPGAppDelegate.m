@@ -11,9 +11,31 @@
 
 #define kMinimizedDeltaSize 245.0
 
+NSInteger segmentIndexToLength(NSInteger index) {
+	switch(index) {
+		case 0: return 6;
+		case 1: return 8;
+		case 2: return 12;
+		case 3: return 24;
+		case 4: return 36;
+	}
+	return 8;
+}
+
+NSInteger lengthToSegmentIndex(NSInteger length) {
+	switch(length) {
+		case 6: return 0;
+		case 8: return 1;
+		case 12: return 2;
+		case 24: return 3;
+		case 36: return 4;
+	}
+	return 1;
+}
+
 @implementation RPGAppDelegate
 
-@synthesize window, aboutWindow, mainView, output, passwordGenerator;
+@synthesize window, aboutWindow, mainView, lengthControl, output, passwordGenerator;
 
 
 #pragma mark IBActions
@@ -35,36 +57,13 @@
 
 - (IBAction)generate:(id)sender;
 {
+	passwordGenerator.length = segmentIndexToLength([self.lengthControl selectedSegment]);
 	[passwordGenerator generate];
 }
 
-- (IBAction)generate6:(id)sender;
+- (IBAction)generateFromMenu:(NSMenuItem *)menuItem;
 {
-	passwordGenerator.length = 6;
-	[passwordGenerator generate];
-}
-
-- (IBAction)generate8:(id)sender;
-{
-	passwordGenerator.length = 8;
-	[passwordGenerator generate];
-}
-
-- (IBAction)generate12:(id)sender;
-{
-	passwordGenerator.length = 12;
-	[passwordGenerator generate];
-}
-
-- (IBAction)generate24:(id)sender;
-{
-	passwordGenerator.length = 24;
-	[passwordGenerator generate];
-}
-
-- (IBAction)generate32:(id)sender;
-{
-	passwordGenerator.length = 32;
+	passwordGenerator.length = [menuItem tag];
 	[passwordGenerator generate];
 }
 
@@ -77,6 +76,10 @@
 	srandom((int)time(0));
 	
 	[self.window setFrameAutosaveName:@"window"];
+	
+	// update segmented control
+	[self.lengthControl setSelectedSegment:lengthToSegmentIndex(self.passwordGenerator.length)];
+	
 	// generate password
 	[passwordGenerator generate];
 }
@@ -89,6 +92,9 @@
 
 - (void)applicationWillResignActive:(NSNotification *)notification
 {
+	// remove focus from output field to avoid ugly text selection
+	[self.window makeFirstResponder:nil];
+	
 	if(!windowAnimationsEnabled) return;
 	
 	CGRect rect;
@@ -106,6 +112,9 @@
 
 - (void)applicationWillBecomeActive:(NSNotification *)notification
 {
+	// focus output field
+	[self.window makeFirstResponder:self.output];
+
 	if(!windowAnimationsEnabled) {
 		windowAnimationsEnabled = YES;
 		return;
@@ -140,7 +149,7 @@
 - (void)passwordGenerator:(PasswordGenerator *)passwordGenerator didGeneratePassword:(NSString *)password;
 {
 	self.output.stringValue = password;
-	[self.output becomeFirstResponder];
+	[self.window makeFirstResponder:self.output];
 }
 
 @end

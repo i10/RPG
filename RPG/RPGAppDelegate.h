@@ -14,6 +14,7 @@
 	NSWindow *window;
 	NSWindow *aboutWindow;
 	NSView *mainView;
+	NSSegmentedControl *lengthControl;
 	NSTextField *output;
 	PasswordGenerator *passwordGenerator;
 	BOOL windowAnimationsEnabled;
@@ -22,15 +23,12 @@
 @property(assign) IBOutlet NSWindow *window;
 @property(assign) IBOutlet NSWindow *aboutWindow;
 @property(assign) IBOutlet NSView *mainView;
+@property(assign) IBOutlet NSSegmentedControl *lengthControl;
 @property(assign) IBOutlet NSTextField *output;
 @property(assign) IBOutlet PasswordGenerator *passwordGenerator;
 
 - (IBAction)generate:(id)sender;
-- (IBAction)generate6:(id)sender;
-- (IBAction)generate8:(id)sender;
-- (IBAction)generate12:(id)sender;
-- (IBAction)generate24:(id)sender;
-- (IBAction)generate32:(id)sender;
+- (IBAction)generateFromMenu:(NSMenuItem *)menuItem;
 
 - (IBAction)copyOutput:(id)sender;
 

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC66FA051349D7C2009902F7 /* BGHUDButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC66FA041349D7C2009902F7 /* BGHUDButtonCell.m */; };
+		FC66FA081349D7CE009902F7 /* BGHUDTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC66FA071349D7CE009902F7 /* BGHUDTextFieldCell.m */; };
+		FC66FA0D1349D81F009902F7 /* BGTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = FC66FA0A1349D81F009902F7 /* BGTheme.m */; };
+		FC66FA0E1349D81F009902F7 /* BGThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC66FA0C1349D81F009902F7 /* BGThemeManager.m */; };
+		FC66FA111349D832009902F7 /* BGGradientTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = FC66FA101349D832009902F7 /* BGGradientTheme.m */; };
+		FC66FA151349D87F009902F7 /* BGHUDSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC66FA141349D87F009902F7 /* BGHUDSegmentedCell.m */; };
 		FC7C41A91346031700D37AC5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7C41A81346031700D37AC5 /* Cocoa.framework */; };
 		FC7C41B31346031700D37AC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC7C41B11346031700D37AC5 /* InfoPlist.strings */; };
 		FC7C41B61346031700D37AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7C41B51346031700D37AC5 /* main.m */; };
@@ -15,12 +21,35 @@
 		FC7C41C61346033200D37AC5 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = FC7C41C51346033200D37AC5 /* Icon.icns */; };
 		FC9F4FB41346267B00EE9317 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9F4FB21346267B00EE9317 /* MainMenu.xib */; };
 		FC9F4FB9134632C400EE9317 /* PasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */; };
-		FCB87A6F1348D32A006FB347 /* HUDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB87A6E1348D32A006FB347 /* HUDButton.m */; };
-		FCB87A7C1348EE07006FB347 /* GraphicsHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB87A7A1348EE07006FB347 /* GraphicsHelpers.m */; };
 		FCCC01941347A5BC004DBB06 /* i10.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCC01931347A5BC004DBB06 /* i10.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FCB87A921349CF23006FB347 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		FC66FA031349D7C2009902F7 /* BGHUDButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDButtonCell.h; path = BGHUDAppKit/Framework/BGHUDButtonCell.h; sourceTree = SOURCE_ROOT; };
+		FC66FA041349D7C2009902F7 /* BGHUDButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDButtonCell.m; path = BGHUDAppKit/Framework/BGHUDButtonCell.m; sourceTree = SOURCE_ROOT; };
+		FC66FA061349D7CE009902F7 /* BGHUDTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDTextFieldCell.h; path = BGHUDAppKit/Framework/BGHUDTextFieldCell.h; sourceTree = SOURCE_ROOT; };
+		FC66FA071349D7CE009902F7 /* BGHUDTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDTextFieldCell.m; path = BGHUDAppKit/Framework/BGHUDTextFieldCell.m; sourceTree = SOURCE_ROOT; };
+		FC66FA091349D81F009902F7 /* BGTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGTheme.h; path = BGHUDAppKit/Framework/BGTheme.h; sourceTree = SOURCE_ROOT; };
+		FC66FA0A1349D81F009902F7 /* BGTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGTheme.m; path = BGHUDAppKit/Framework/BGTheme.m; sourceTree = SOURCE_ROOT; };
+		FC66FA0B1349D81F009902F7 /* BGThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGThemeManager.h; path = BGHUDAppKit/Framework/BGThemeManager.h; sourceTree = SOURCE_ROOT; };
+		FC66FA0C1349D81F009902F7 /* BGThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGThemeManager.m; path = BGHUDAppKit/Framework/BGThemeManager.m; sourceTree = SOURCE_ROOT; };
+		FC66FA0F1349D832009902F7 /* BGGradientTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGGradientTheme.h; path = BGHUDAppKit/Framework/BGGradientTheme.h; sourceTree = SOURCE_ROOT; };
+		FC66FA101349D832009902F7 /* BGGradientTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGGradientTheme.m; path = BGHUDAppKit/Framework/BGGradientTheme.m; sourceTree = SOURCE_ROOT; };
+		FC66FA121349D83F009902F7 /* BGHUDGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDGeometry.h; path = BGHUDAppKit/Framework/BGHUDGeometry.h; sourceTree = SOURCE_ROOT; };
+		FC66FA131349D87F009902F7 /* BGHUDSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGHUDSegmentedCell.h; path = BGHUDAppKit/Framework/BGHUDSegmentedCell.h; sourceTree = SOURCE_ROOT; };
+		FC66FA141349D87F009902F7 /* BGHUDSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGHUDSegmentedCell.m; path = BGHUDAppKit/Framework/BGHUDSegmentedCell.m; sourceTree = SOURCE_ROOT; };
 		FC7C41A41346031700D37AC5 /* RPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7C41A81346031700D37AC5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FC7C41AB1346031700D37AC5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -37,10 +66,6 @@
 		FC9F4FB31346267B00EE9317 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordGenerator.h; sourceTree = "<group>"; };
 		FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordGenerator.m; sourceTree = "<group>"; };
-		FCB87A6D1348D32A006FB347 /* HUDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDButton.h; sourceTree = "<group>"; };
-		FCB87A6E1348D32A006FB347 /* HUDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDButton.m; sourceTree = "<group>"; };
-		FCB87A7A1348EE07006FB347 /* GraphicsHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsHelpers.m; sourceTree = "<group>"; };
-		FCB87A7B1348EE07006FB347 /* GraphicsHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsHelpers.h; sourceTree = "<group>"; };
 		FCCC01931347A5BC004DBB06 /* i10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = i10.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,9 +81,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC66FA021349D7B7009902F7 /* BGHUD */ = {
+			isa = PBXGroup;
+			children = (
+				FC66FA121349D83F009902F7 /* BGHUDGeometry.h */,
+				FC66FA0F1349D832009902F7 /* BGGradientTheme.h */,
+				FC66FA101349D832009902F7 /* BGGradientTheme.m */,
+				FC66FA091349D81F009902F7 /* BGTheme.h */,
+				FC66FA0A1349D81F009902F7 /* BGTheme.m */,
+				FC66FA0B1349D81F009902F7 /* BGThemeManager.h */,
+				FC66FA0C1349D81F009902F7 /* BGThemeManager.m */,
+				FC66FA031349D7C2009902F7 /* BGHUDButtonCell.h */,
+				FC66FA041349D7C2009902F7 /* BGHUDButtonCell.m */,
+				FC66FA061349D7CE009902F7 /* BGHUDTextFieldCell.h */,
+				FC66FA071349D7CE009902F7 /* BGHUDTextFieldCell.m */,
+				FC66FA131349D87F009902F7 /* BGHUDSegmentedCell.h */,
+				FC66FA141349D87F009902F7 /* BGHUDSegmentedCell.m */,
+			);
+			name = BGHUD;
+			path = RPG;
+			sourceTree = "<group>";
+		};
 		FC7C41991346031700D37AC5 = {
 			isa = PBXGroup;
 			children = (
+				FC66FA021349D7B7009902F7 /* BGHUD */,
 				FC7C41AE1346031700D37AC5 /* RPG */,
 				FC7C41A71346031700D37AC5 /* Frameworks */,
 				FC7C41A51346031700D37AC5 /* Products */,
@@ -95,7 +142,6 @@
 		FC7C41AE1346031700D37AC5 /* RPG */ = {
 			isa = PBXGroup;
 			children = (
-				FCB87A791348EA9A006FB347 /* HUD Views */,
 				FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */,
 				FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */,
 				FC9F4FB21346267B00EE9317 /* MainMenu.xib */,
@@ -120,17 +166,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FCB87A791348EA9A006FB347 /* HUD Views */ = {
-			isa = PBXGroup;
-			children = (
-				FCB87A6D1348D32A006FB347 /* HUDButton.h */,
-				FCB87A6E1348D32A006FB347 /* HUDButton.m */,
-				FCB87A7B1348EE07006FB347 /* GraphicsHelpers.h */,
-				FCB87A7A1348EE07006FB347 /* GraphicsHelpers.m */,
-			);
-			name = "HUD Views";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +176,7 @@
 				FC7C41A01346031700D37AC5 /* Sources */,
 				FC7C41A11346031700D37AC5 /* Frameworks */,
 				FC7C41A21346031700D37AC5 /* Resources */,
+				FCB87A921349CF23006FB347 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -199,8 +235,12 @@
 				FC7C41B61346031700D37AC5 /* main.m in Sources */,
 				FC7C41BC1346031700D37AC5 /* RPGAppDelegate.m in Sources */,
 				FC9F4FB9134632C400EE9317 /* PasswordGenerator.m in Sources */,
-				FCB87A6F1348D32A006FB347 /* HUDButton.m in Sources */,
-				FCB87A7C1348EE07006FB347 /* GraphicsHelpers.m in Sources */,
+				FC66FA051349D7C2009902F7 /* BGHUDButtonCell.m in Sources */,
+				FC66FA081349D7CE009902F7 /* BGHUDTextFieldCell.m in Sources */,
+				FC66FA0D1349D81F009902F7 /* BGTheme.m in Sources */,
+				FC66FA0E1349D81F009902F7 /* BGThemeManager.m in Sources */,
+				FC66FA111349D832009902F7 /* BGGradientTheme.m in Sources */,
+				FC66FA151349D87F009902F7 /* BGHUDSegmentedCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +311,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/RPG\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -287,6 +331,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/RPG\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RPG/RPG-Prefix.pch";
