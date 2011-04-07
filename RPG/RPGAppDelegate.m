@@ -112,7 +112,7 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	
 	if(!windowAnimationsEnabled) return;
 	
-	CGRect rect;
+	NSRect rect;
 	
 	// move main view up
 	rect = self.mainView.bounds;
@@ -135,7 +135,7 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 		return;
 	}
 	
-	CGRect rect;
+	NSRect rect;
 	
 	// change window size
 	rect = self.window.frame;

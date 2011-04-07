@@ -94,7 +94,7 @@ NSString *generateHash(NSString *string) {
 	SHA1Reset(&sha);
 	
 	// input the string
-	SHA1Input(&sha, [string cStringUsingEncoding:NSMacOSRomanStringEncoding], [string length]);
+	SHA1Input(&sha, (const unsigned char *)[string cStringUsingEncoding:NSMacOSRomanStringEncoding], (unsigned int)[string length]);
 	
 	// compute the hash
 	if(!SHA1Result(&sha)) {
