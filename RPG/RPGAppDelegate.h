@@ -19,8 +19,6 @@
 	NSTextField *hash;
 	PasswordGenerator *passwordGenerator;
 	BOOL windowAnimationsEnabled;
-	
-	CGFloat windowHeight;
 }
 
 @property(assign) IBOutlet NSWindow *window;

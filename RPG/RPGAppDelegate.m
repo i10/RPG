@@ -9,6 +9,7 @@
 #import "RPGAppDelegate.h"
 #import "PasswordGenerator.h"
 
+#define kNormalWindowHeight 308.0
 #define kMinimizedWindowHeight 75.0
 #define kMinimizedWindowOriginY 162.0
 
@@ -90,7 +91,6 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	[self.window setFrameAutosaveName:@"window"];
-	windowHeight = self.window.frame.size.height;
 	
 	// update segmented control
 	[self.lengthControl setSelectedSegment:lengthToSegmentIndex(self.passwordGenerator.length)];
@@ -122,6 +122,7 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	// change window size
 	rect = self.window.frame;
 	rect.size.height = kMinimizedWindowHeight;
+	rect.origin.y -= kMinimizedWindowHeight-kNormalWindowHeight;
 	[self.window setFrame:rect display:YES animate:NO];
 }
 
@@ -139,7 +140,8 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	
 	// change window size
 	rect = self.window.frame;
-	rect.size.height = windowHeight;
+	rect.size.height = kNormalWindowHeight;
+	rect.origin.y += kMinimizedWindowHeight-kNormalWindowHeight;
 	[self.window setFrame:rect display:YES animate:NO];
 	
 	// move main view up
@@ -148,6 +150,11 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	self.mainView.bounds = rect;
 	self.mainView.frame = rect;
 	
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
+{
+	return YES;
 }
 
 
