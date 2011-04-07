@@ -12,6 +12,8 @@
 #define kMinimizedWindowHeight 75.0
 #define kMinimizedWindowOriginY 162.0
 
+#define kWebsiteURL @"http://hci.rwth-aachen.de/rpg"
+
 NSInteger segmentIndexToLength(NSInteger index) {
 	switch(index) {
 		case 0: return 6;
@@ -40,6 +42,13 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 
 #pragma mark IBActions
+
+- (IBAction)openWebsite:(NSButton *)sender;
+{
+	NSURL *url = [NSURL URLWithString:[sender title]];
+	NSLog(@"Open: %@", url);
+	// todo: open the wbesite of the tool
+}
 
 - (IBAction)setPasswordLength:(NSButton *)sender;
 {

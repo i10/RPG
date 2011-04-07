@@ -33,7 +33,7 @@
 
 - (IBAction)generate:(id)sender;
 - (IBAction)generateFromMenu:(NSMenuItem *)menuItem;
-
 - (IBAction)copyHash:(id)sender;
+- (IBAction)openWebsite:(id)sender;
 
 @end
