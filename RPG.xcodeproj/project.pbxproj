@@ -22,6 +22,7 @@
 		FCD52882134B1AF000F31B32 /* BGTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD5287B134B1AF000F31B32 /* BGTheme.m */; };
 		FCD52883134B1AF000F31B32 /* BGThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD5287D134B1AF000F31B32 /* BGThemeManager.m */; };
 		FCD52885134B323000F31B32 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = FCD52884134B323000F31B32 /* Icon.icns */; };
+		FCEF3BF5134DD7860086533A /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = FCEF3BF3134DD7860086533A /* sha1.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,7 +52,7 @@
 		FC7C41BB1346031700D37AC5 /* RPGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPGAppDelegate.m; sourceTree = "<group>"; };
 		FC9F4FB31346267B00EE9317 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordGenerator.h; sourceTree = "<group>"; };
-		FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordGenerator.m; sourceTree = "<group>"; };
+		FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PasswordGenerator.m; sourceTree = "<group>"; };
 		FCCC01931347A5BC004DBB06 /* i10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = i10.png; sourceTree = "<group>"; };
 		FCD52871134B1AF000F31B32 /* BGGradientTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGradientTheme.h; sourceTree = "<group>"; };
 		FCD52872134B1AF000F31B32 /* BGGradientTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGradientTheme.m; sourceTree = "<group>"; };
@@ -67,6 +68,8 @@
 		FCD5287C134B1AF000F31B32 /* BGThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGThemeManager.h; sourceTree = "<group>"; };
 		FCD5287D134B1AF000F31B32 /* BGThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGThemeManager.m; sourceTree = "<group>"; };
 		FCD52884134B323000F31B32 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		FCEF3BF3134DD7860086533A /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		FCEF3BF4134DD7860086533A /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 		FC7C41AE1346031700D37AC5 /* RPG */ = {
 			isa = PBXGroup;
 			children = (
+				FCEF3BF4134DD7860086533A /* sha1.h */,
+				FCEF3BF3134DD7860086533A /* sha1.c */,
 				FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */,
 				FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */,
 				FC9F4FB21346267B00EE9317 /* MainMenu.xib */,
@@ -241,6 +246,7 @@
 				FCD52881134B1AF000F31B32 /* BGHUDTextFieldCell.m in Sources */,
 				FCD52882134B1AF000F31B32 /* BGTheme.m in Sources */,
 				FCD52883134B1AF000F31B32 /* BGThemeManager.m in Sources */,
+				FCEF3BF5134DD7860086533A /* sha1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
