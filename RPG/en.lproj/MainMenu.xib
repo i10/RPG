@@ -1668,6 +1668,7 @@
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{1e+13, 1e+13}</string>
+				<string key="NSFrameAutosaveName">window</string>
 			</object>
 			<object class="NSCustomObject" id="605467061">
 				<string key="NSClassName">PasswordGenerator</string>

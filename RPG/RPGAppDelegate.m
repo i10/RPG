@@ -9,6 +9,7 @@
 #import "RPGAppDelegate.h"
 #import "PasswordGenerator.h"
 
+#define kWindowAutosaveName @"window"
 #define kNormalWindowHeight 308.0
 #define kMinimizedWindowHeight 75.0
 #define kMinimizedWindowOriginY 162.0
@@ -90,8 +91,6 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	[self.window setFrameAutosaveName:@"window"];
-	
 	// update segmented control
 	[self.lengthControl setSelectedSegment:lengthToSegmentIndex(self.passwordGenerator.length)];
 	
@@ -107,6 +106,9 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 - (void)applicationWillResignActive:(NSNotification *)notification
 {
+	// disable window frame autosaving while the window is minimized
+	[self.window setFrameAutosaveName:@""];
+	
 	// remove focus from output field to avoid ugly text selection
 	[self.window makeFirstResponder:nil];
 	
@@ -150,6 +152,8 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	self.mainView.bounds = rect;
 	self.mainView.frame = rect;
 	
+	// enable window frame autosaving
+	[self.window setFrameAutosaveName:kWindowAutosaveName];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
