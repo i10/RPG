@@ -46,8 +46,7 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 - (IBAction)openWebsite:(NSButton *)sender;
 {
 	NSURL *url = [NSURL URLWithString:[sender title]];
-	NSLog(@"Open: %@", url);
-	// todo: open the wbesite of the tool
+	[[NSWorkspace sharedWorkspace] openURL:url];
 }
 
 - (IBAction)setPasswordLength:(NSButton *)sender;
