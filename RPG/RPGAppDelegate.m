@@ -9,15 +9,16 @@
 #import "RPGAppDelegate.h"
 #import "PasswordGenerator.h"
 
-#define kMinimizedDeltaSize 245.0
+#define kMinimizedWindowHeight 75.0
+#define kMinimizedWindowOriginY 162.0
 
 NSInteger segmentIndexToLength(NSInteger index) {
 	switch(index) {
 		case 0: return 6;
 		case 1: return 8;
-		case 2: return 12;
-		case 3: return 24;
-		case 4: return 36;
+		case 2: return 10;
+		case 3: return 12;
+		case 4: return 14;
 	}
 	return 8;
 }
@@ -26,16 +27,16 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	switch(length) {
 		case 6: return 0;
 		case 8: return 1;
-		case 12: return 2;
-		case 24: return 3;
-		case 36: return 4;
+		case 10: return 2;
+		case 12: return 3;
+		case 14: return 4;
 	}
 	return 1;
 }
 
 @implementation RPGAppDelegate
 
-@synthesize window, aboutWindow, mainView, lengthControl, output, passwordGenerator;
+@synthesize window, aboutWindow, mainView, lengthControl, output, hash, passwordGenerator;
 
 
 #pragma mark IBActions
@@ -46,18 +47,23 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	[passwordGenerator generate];
 }
 
-- (IBAction)copyOutput:(id)sender;
+- (IBAction)copyHash:(id)sender;
 {
 	NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
 
 	// copy the output to the paste board
 	[pasteboard clearContents];
-	[pasteboard writeObjects:[NSArray arrayWithObject:self.output.stringValue]];
+	[pasteboard writeObjects:[NSArray arrayWithObject:self.hash.stringValue]];
 }
 
 - (IBAction)generate:(id)sender;
 {
-	passwordGenerator.length = segmentIndexToLength([self.lengthControl selectedSegment]);
+	[passwordGenerator generate];
+}
+
+- (IBAction)generateFromSegment:(NSSegmentedControl *)segmentControl;
+{
+	passwordGenerator.length = segmentIndexToLength([segmentControl selectedSegment]);
 	[passwordGenerator generate];
 }
 
@@ -65,6 +71,9 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 {
 	passwordGenerator.length = [menuItem tag];
 	[passwordGenerator generate];
+
+	// update segmented control
+	[self.lengthControl setSelectedSegment:lengthToSegmentIndex(self.passwordGenerator.length)];
 }
 
 
@@ -72,10 +81,8 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	// init randomizer
-	srandom((int)time(0));
-	
 	[self.window setFrameAutosaveName:@"window"];
+	windowHeight = self.window.frame.size.height;
 	
 	// update segmented control
 	[self.lengthControl setSelectedSegment:lengthToSegmentIndex(self.passwordGenerator.length)];
@@ -101,12 +108,12 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	
 	// move main view up
 	rect = self.mainView.bounds;
-	rect.origin.y = -kMinimizedDeltaSize;
+	rect.origin.y = -kMinimizedWindowOriginY;
 	self.mainView.bounds = rect;
 	
 	// change window size
 	rect = self.window.frame;
-	rect.size.height -= kMinimizedDeltaSize;
+	rect.size.height = kMinimizedWindowHeight;
 	[self.window setFrame:rect display:YES animate:NO];
 }
 
@@ -124,7 +131,7 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	
 	// change window size
 	rect = self.window.frame;
-	rect.size.height += kMinimizedDeltaSize;
+	rect.size.height = windowHeight;
 	[self.window setFrame:rect display:YES animate:NO];
 	
 	// move main view up
@@ -146,9 +153,10 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 #pragma mark PasswordGeneratorDelegate
 
-- (void)passwordGenerator:(PasswordGenerator *)passwordGenerator didGeneratePassword:(NSString *)password;
+- (void)passwordGenerator:(PasswordGenerator *)thePasswordGenerator didGeneratePassword:(NSString *)password;
 {
 	self.output.stringValue = password;
+	self.hash.stringValue = [self.passwordGenerator generateHashFromString:password];
 	[self.window makeFirstResponder:self.output];
 }
 

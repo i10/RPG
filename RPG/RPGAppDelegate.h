@@ -16,8 +16,11 @@
 	NSView *mainView;
 	NSSegmentedControl *lengthControl;
 	NSTextField *output;
+	NSTextField *hash;
 	PasswordGenerator *passwordGenerator;
 	BOOL windowAnimationsEnabled;
+	
+	CGFloat windowHeight;
 }
 
 @property(assign) IBOutlet NSWindow *window;
@@ -25,11 +28,12 @@
 @property(assign) IBOutlet NSView *mainView;
 @property(assign) IBOutlet NSSegmentedControl *lengthControl;
 @property(assign) IBOutlet NSTextField *output;
+@property(assign) IBOutlet NSTextField *hash;
 @property(assign) IBOutlet PasswordGenerator *passwordGenerator;
 
 - (IBAction)generate:(id)sender;
 - (IBAction)generateFromMenu:(NSMenuItem *)menuItem;
 
-- (IBAction)copyOutput:(id)sender;
+- (IBAction)copyHash:(id)sender;
 
 @end
