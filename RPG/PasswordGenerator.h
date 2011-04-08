@@ -16,6 +16,7 @@
 
 @interface PasswordGenerator : NSObject {
 	NSUInteger length;
+	NSString *exclude;
 	BOOL useCapitals;
 	BOOL useNumbers;
 	BOOL useSymbols1;
@@ -26,6 +27,7 @@
 }
 
 @property(assign) NSUInteger length;
+@property(copy) NSString *exclude;
 @property(assign) BOOL useCapitals;
 @property(assign) BOOL useNumbers;
 @property(assign) BOOL useSymbols1;

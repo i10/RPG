@@ -9,29 +9,48 @@
 #import "PasswordGenerator.h"
 #import "sha1.h"
 
-// generate a word of a certain length
-NSString *generateWord(NSUInteger length, BOOL capitalize) {
-	static char *consonants = "qwrtypsdfghjklzxcvbnm";
-	static int numConsonants = 21;
-	static char *vowels = "euioa";
-	static int numVowels = 5;
+char *removeCharacters(char *string, const char *characters) {
+	if(characters == NULL) return string;
 	
+	char *result = malloc(sizeof(char) * (strlen(string)+1));
+	
+	char *p;
+	char c;
+	int i,j=0;
+	for(i=0; i<strlen(string); i++) {
+		c = string[i];
+		p = strchr(characters, c);
+		if(!p) result[j++] = c;
+	}
+	
+	result[j] = '\0';
+	return result;
+}
+
+// generate a word of a certain length
+NSString *generateWord(NSUInteger length, BOOL capitalize, NSString *excludes) {
+	static char *Consonants = "QWERTYUIOPASDFGHJKLZXCVBNM";
+	static char *consonants = "qwrtypsdfghjklzxcvbnm";
+//	static char *Vowels = "EUIOA";
+	static char *vowels = "euioa";
+	
+	char *chars;
 	char word[length+1];
 	char c;
 	for(int i = 0; i < length; i++) {
 		switch(i%2) {
 			case 0:
-				c = consonants[random()%numConsonants];
+				if(i == 0 && capitalize) chars = Consonants;
+				else chars = consonants;
 				break;
 			case 1:
-				c = vowels[random()%numVowels];
+				chars = vowels;
 				break;
 		}
+		chars = removeCharacters(chars, [excludes cStringUsingEncoding:NSMacOSRomanStringEncoding]);
+		c = chars[random()%strlen(chars)];
 		word[i] = c;
 	}
-	
-	// capitalize first letter
-	if(capitalize) word[0] -= 32;
 	
 	// terminate string
 	word[length] = '\0';
@@ -39,7 +58,7 @@ NSString *generateWord(NSUInteger length, BOOL capitalize) {
 	return [NSString stringWithFormat:@"%s", word];
 }
 
-NSString *generateSpecial(BOOL useDigits, BOOL useSpecial1, BOOL useSpecial2) {
+NSString *generateSpecial(BOOL useDigits, BOOL useSpecial1, BOOL useSpecial2, NSString *excludes) {
 	static char *digits = "1234567890";
 	static char *special1 = "-/:;()$&@\".,?!'";
 	static char *special2 = "[]{}#%^*+=_\\|~<>";
@@ -83,6 +102,9 @@ NSString *generateSpecial(BOOL useDigits, BOOL useSpecial1, BOOL useSpecial2) {
 			break;
 	}
 	
+	// remove excludes
+	removeCharacters(chars, [excludes cStringUsingEncoding:NSMacOSRomanStringEncoding]);
+	
 	// get random character
 	char c = chars[random()%strlen(chars)];
 	
@@ -112,7 +134,7 @@ NSString *generateHash(NSString *string) {
 
 @implementation PasswordGenerator
 
-@synthesize length, useCapitals, useNumbers, useSymbols1, useSymbols2;
+@synthesize length, exclude, useCapitals, useNumbers, useSymbols1, useSymbols2;
 @synthesize delegate;
 
 // generate a password
@@ -140,13 +162,13 @@ NSString *generateHash(NSString *string) {
 			// special case: we do not allow special characters but would have only 1 char remaining -> make the word longer
 			if(!useSpecial && charsRemaining-wordLength == 1) wordLength++;
 			
-			[chars appendString:generateWord(wordLength, self.useCapitals)];
+			[chars appendString:generateWord(wordLength, self.useCapitals, self.exclude)];
 			charsRemaining -= wordLength;
 		}
 		 
 		 // add a symbol
 		if(useSpecial && charsRemaining > 0) {
-			[chars appendString:generateSpecial(self.useNumbers, self.useSymbols1, self.useSymbols2)];
+			[chars appendString:generateSpecial(self.useNumbers, self.useSymbols1, self.useSymbols2, self.exclude)];
 			charsRemaining -= 1;
 		}
 	}
@@ -168,6 +190,7 @@ NSString *generateHash(NSString *string) {
 	
 	// store configuration in user defaults
 	[defaults setInteger:self.length forKey:@"length"];
+	[defaults setObject:self.exclude forKey:@"exclude"];
 	[defaults setBool:self.useCapitals forKey:@"useCapitals"];
 	[defaults setBool:self.useNumbers forKey:@"useNumbers"];
 	[defaults setBool:self.useSymbols1 forKey:@"useSymbols1"];
@@ -190,6 +213,7 @@ NSString *generateHash(NSString *string) {
 		// set the default configuration
 		[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
 									[NSNumber numberWithInteger:8], @"length",
+									@"", @"exclude",
 									[NSNumber numberWithBool:YES], @"useCapitals",
 									[NSNumber numberWithBool:YES], @"useNumbers",
 									[NSNumber numberWithBool:YES], @"useSymbols1",
@@ -198,6 +222,7 @@ NSString *generateHash(NSString *string) {
 		
 		// load configuration from user defaults
 		length = [defaults integerForKey:@"length"];
+		exclude = [[defaults objectForKey:@"exclude"] retain];
 		useCapitals = [defaults boolForKey:@"useCapitals"];
 		useNumbers = [defaults boolForKey:@"useNumbers"];
 		useSymbols1 = [defaults boolForKey:@"useSymbols1"];
