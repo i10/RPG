@@ -213,7 +213,7 @@ NSString *generateHash(NSString *string) {
 		// set the default configuration
 		[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
 									[NSNumber numberWithInteger:8], @"length",
-									@"", @"exclude",
+									@"lI", @"exclude",
 									[NSNumber numberWithBool:YES], @"useCapitals",
 									[NSNumber numberWithBool:YES], @"useNumbers",
 									[NSNumber numberWithBool:YES], @"useSymbols1",
