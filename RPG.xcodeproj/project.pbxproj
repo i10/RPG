@@ -37,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FC270F07134F2E350037A976 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FC7C41A41346031700D37AC5 /* RPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7C41A81346031700D37AC5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FC7C41AB1346031700D37AC5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -203,6 +204,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = FC7C41991346031700D37AC5;
 			productRefGroup = FC7C41A51346031700D37AC5 /* Products */;
@@ -269,6 +271,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FC9F4FB31346267B00EE9317 /* en */,
+				FC270F07134F2E350037A976 /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
