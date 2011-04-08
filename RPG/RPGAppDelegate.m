@@ -157,12 +157,6 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	[self.window setFrameAutosaveName:kWindowAutosaveName];
 }
 
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
-{
-	return YES;
-}
-
-
 #pragma mark accessors
 
 - (void)setPassword:(NSString *)thePassword;
@@ -184,9 +178,17 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 - (void)windowDidResignKey:(NSNotification *)notification;
 {
-	[self.aboutWindow orderOut:self];
+	if([notification object] == self.aboutWindow) {
+		[self.aboutWindow orderOut:self];
+	}
 }
 
+- (void)windowWillClose:(NSNotification *)notification
+{
+	if([notification object] == self.window) {
+		[NSApp terminate:self];
+	}
+}
 
 #pragma mark PasswordGeneratorDelegate
 
