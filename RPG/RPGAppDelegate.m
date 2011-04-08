@@ -10,9 +10,9 @@
 #import "PasswordGenerator.h"
 
 #define kWindowAutosaveName @"window"
-#define kNormalWindowHeight 308.0
+#define kNormalWindowHeight 378.0
 #define kMinimizedWindowHeight 75.0
-#define kMinimizedWindowOriginY 162.0
+#define kMinimizedWindowOriginY 232.0
 
 #define kWebsiteURL @"http://hci.rwth-aachen.de/rpg"
 
@@ -40,7 +40,8 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 @implementation RPGAppDelegate
 
-@synthesize window, aboutWindow, mainView, lengthControl, output, hash, passwordGenerator;
+@synthesize hash;
+@synthesize window, aboutWindow, mainView, output, lengthControl, passwordGenerator;
 
 
 #pragma mark IBActions
@@ -63,7 +64,7 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 	// copy the output to the paste board
 	[pasteboard clearContents];
-	[pasteboard writeObjects:[NSArray arrayWithObject:self.hash.stringValue]];
+	[pasteboard writeObjects:[NSArray arrayWithObject:self.hash]];
 }
 
 - (IBAction)generate:(id)sender;
@@ -162,6 +163,23 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 }
 
 
+#pragma mark accessors
+
+- (void)setPassword:(NSString *)thePassword;
+{
+	if(password != thePassword) {
+		[password autorelease];
+		password = [thePassword retain];
+		self.hash = [passwordGenerator generateHashFromString:password];
+	}
+}
+
+- (NSString *)password;
+{
+	return password;
+}
+
+
 #pragma mark NSWindowDelegate
 
 - (void)windowDidResignKey:(NSNotification *)notification;
@@ -172,10 +190,9 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 #pragma mark PasswordGeneratorDelegate
 
-- (void)passwordGenerator:(PasswordGenerator *)thePasswordGenerator didGeneratePassword:(NSString *)password;
+- (void)passwordGenerator:(PasswordGenerator *)thePasswordGenerator didGeneratePassword:(NSString *)thePassword;
 {
-	self.output.stringValue = password;
-	self.hash.stringValue = [self.passwordGenerator generateHashFromString:password];
+	self.password = thePassword;
 	[self.window makeFirstResponder:self.output];
 }
 

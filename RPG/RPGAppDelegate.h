@@ -10,24 +10,27 @@
 #import "PasswordGenerator.h"
 
 @interface RPGAppDelegate : NSObject <NSApplicationDelegate, PasswordGeneratorDelegate> {
+	NSString *password;
+	NSString *hash;
 @private
 	NSWindow *window;
 	NSWindow *aboutWindow;
 	NSView *mainView;
-	NSSegmentedControl *lengthControl;
 	NSTextField *output;
-	NSTextField *hash;
+	NSSegmentedControl *lengthControl;
 	PasswordGenerator *passwordGenerator;
 	BOOL windowAnimationsEnabled;
 }
+
+@property(retain) NSString *password;
+@property(retain) NSString *hash;
 
 @property(assign) IBOutlet NSWindow *window;
 @property(assign) IBOutlet NSWindow *aboutWindow;
 @property(assign) IBOutlet NSView *mainView;
 @property(assign) IBOutlet NSSegmentedControl *lengthControl;
 @property(assign) IBOutlet NSTextField *output;
-@property(assign) IBOutlet NSTextField *hash;
-@property(assign) IBOutlet PasswordGenerator *passwordGenerator;
+@property(retain) IBOutlet PasswordGenerator *passwordGenerator;
 
 - (IBAction)generate:(id)sender;
 - (IBAction)generateFromMenu:(NSMenuItem *)menuItem;
