@@ -33,6 +33,7 @@
 @property(retain) IBOutlet PasswordGenerator *passwordGenerator;
 
 - (IBAction)generate:(id)sender;
+- (IBAction)generateAndCopy:(id)sender;
 - (IBAction)generateFromMenu:(NSMenuItem *)menuItem;
 - (IBAction)copyHash:(id)sender;
 - (IBAction)openWebsite:(id)sender;

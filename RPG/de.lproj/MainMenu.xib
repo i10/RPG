@@ -207,6 +207,14 @@
 								<object class="NSMenuItem" id="705341025">
 									<reference key="NSMenu" ref="720053764"/>
 									<string key="NSTitle">Generieren</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
+								<object class="NSMenuItem" id="260229367">
+									<reference key="NSMenu" ref="720053764"/>
+									<string key="NSTitle">Generieren &amp; Kopieren</string>
 									<string type="base64-UTF8" key="NSKeyEquiv">DQ</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -1692,6 +1700,14 @@
 					</object>
 					<int key="connectionID">1080</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">generateAndCopy:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="260229367"/>
+					</object>
+					<int key="connectionID">1088</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -1772,6 +1788,7 @@
 							<reference ref="425164168"/>
 							<reference ref="579971712"/>
 							<reference ref="947528169"/>
+							<reference ref="260229367"/>
 						</object>
 						<reference key="parent" ref="379814623"/>
 					</object>
@@ -2475,6 +2492,11 @@
 						<reference key="object" ref="299356726"/>
 						<reference key="parent" ref="835318025"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1086</int>
+						<reference key="object" ref="260229367"/>
+						<reference key="parent" ref="720053764"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -2510,6 +2532,8 @@
 					<string>1065.IBPluginDependency</string>
 					<string>1066.IBPluginDependency</string>
 					<string>1068.IBPluginDependency</string>
+					<string>1086.IBPluginDependency</string>
+					<string>1086.ImportedFromIB2</string>
 					<string>112.IBPluginDependency</string>
 					<string>112.ImportedFromIB2</string>
 					<string>129.IBPluginDependency</string>
@@ -2707,6 +2731,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2956,7 +2982,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1085</int>
+			<int key="maxID">1088</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3013,11 +3039,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>copyHash:</string>
 							<string>generate:</string>
+							<string>generateAndCopy:</string>
 							<string>generateFromMenu:</string>
 							<string>openWebsite:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>NSMenuItem</string>
@@ -3030,6 +3058,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>copyHash:</string>
 							<string>generate:</string>
+							<string>generateAndCopy:</string>
 							<string>generateFromMenu:</string>
 							<string>openWebsite:</string>
 						</object>
@@ -3041,6 +3070,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">generate:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">generateAndCopy:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

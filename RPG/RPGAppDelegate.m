@@ -72,6 +72,17 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	[passwordGenerator generate];
 }
 
+- (IBAction)generateAndCopy:(id)sender;
+{
+	[passwordGenerator generate];
+	
+	NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+	
+	// copy the output to the paste board
+	[pasteboard clearContents];
+	[pasteboard writeObjects:[NSArray arrayWithObject:self.password]];
+}
+
 - (IBAction)generateFromSegment:(NSSegmentedControl *)segmentControl;
 {
 	passwordGenerator.length = segmentIndexToLength([segmentControl selectedSegment]);
