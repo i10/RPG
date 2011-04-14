@@ -127,9 +127,9 @@
 				FCEF3BF3134DD7860086533A /* sha1.c */,
 				FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */,
 				FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */,
-				FC9F4FB21346267B00EE9317 /* MainMenu.xib */,
 				FC7C41BA1346031700D37AC5 /* RPGAppDelegate.h */,
 				FC7C41BB1346031700D37AC5 /* RPGAppDelegate.m */,
+				FC9F4FB21346267B00EE9317 /* MainMenu.xib */,
 				FC7C41AF1346031700D37AC5 /* Supporting Files */,
 			);
 			path = RPG;
