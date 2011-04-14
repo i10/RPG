@@ -10,7 +10,7 @@
 #import "PasswordGenerator.h"
 
 #define kWindowAutosaveName @"window"
-#define kNormalWindowHeight 378.0
+#define kNormalWindowHeight 397.0
 #define kMinimizedWindowHeight 75.0
 #define kMinimizedWindowOriginY 232.0
 
