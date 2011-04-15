@@ -84,8 +84,12 @@
 	static SHA1Context sha;
 	SHA1Reset(&sha);
 	
+	// convert to Mac OS Roman
+	const unsigned char *chars = (const unsigned char *)[string cStringUsingEncoding:NSMacOSRomanStringEncoding];
+	if(chars == NULL) return nil;
+	
 	// input the string
-	SHA1Input(&sha, (const unsigned char *)[string cStringUsingEncoding:NSMacOSRomanStringEncoding], (unsigned int)[string length]);
+	SHA1Input(&sha, chars, (unsigned int)[string length]);
 	
 	// compute the hash
 	if(!SHA1Result(&sha)) {
@@ -113,6 +117,31 @@
 	[defaults setBool:self.useNumbers forKey:@"useNumbers"];
 	[defaults setBool:self.useSymbols1 forKey:@"useSymbols1"];
 	[defaults setBool:self.useSymbols2 forKey:@"useSymbols2"];
+}
+
+
+#pragma mark service methods
+
+- (void)generatePassword:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error;
+{
+	// generate password
+	NSString *password = [self generate];
+	
+	// Write the password string onto the pasteboard.
+	[pboard clearContents];
+	[pboard setString:password forType:NSStringPboardType];
+//	[pboard writeObjects:[NSArray arrayWithObject:password]];
+}
+
+- (void)generateHash:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error;
+{
+	// generate hash from random password
+	NSString *string = [self generate];
+	NSString *hash = [self generateHashFromString:string];
+	
+	// Write the password string onto the pasteboard.
+	[pboard clearContents];
+	[pboard setString:hash forType:NSStringPboardType];
 }
 
 

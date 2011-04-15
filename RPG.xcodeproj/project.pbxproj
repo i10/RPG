@@ -16,6 +16,7 @@
 		FC9F4FB9134632C400EE9317 /* PasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */; };
 		FCB7EDEC1358400E0044D223 /* NSMutableString+DeleteCharactersFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB7EDEB1358400E0044D223 /* NSMutableString+DeleteCharactersFromString.m */; };
 		FCB7EDF0135841A90044D223 /* NSString+RandomCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB7EDEF135841A90044D223 /* NSString+RandomCharacter.m */; };
+		FCB7EE0B135854270044D223 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCB7EE0D135854270044D223 /* ServicesMenu.strings */; };
 		FCD5287E134B1AF000F31B32 /* BGGradientTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD52872134B1AF000F31B32 /* BGGradientTheme.m */; };
 		FCD5287F134B1AF000F31B32 /* BGHUDButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD52874134B1AF000F31B32 /* BGHUDButtonCell.m */; };
 		FCD52880134B1AF000F31B32 /* BGHUDSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD52877134B1AF000F31B32 /* BGHUDSegmentedCell.m */; };
@@ -45,7 +46,6 @@
 		FC7C41AB1346031700D37AC5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		FC7C41AC1346031700D37AC5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FC7C41AD1346031700D37AC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FC7C41B01346031700D37AC5 /* RPG-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RPG-Info.plist"; sourceTree = "<group>"; };
 		FC7C41B21346031700D37AC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC7C41B41346031700D37AC5 /* RPG-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RPG-Prefix.pch"; sourceTree = "<group>"; };
 		FC7C41B51346031700D37AC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,6 +59,9 @@
 		FCB7EDEB1358400E0044D223 /* NSMutableString+DeleteCharactersFromString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+DeleteCharactersFromString.m"; sourceTree = "<group>"; };
 		FCB7EDEE135841A90044D223 /* NSString+RandomCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RandomCharacter.h"; sourceTree = "<group>"; };
 		FCB7EDEF135841A90044D223 /* NSString+RandomCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RandomCharacter.m"; sourceTree = "<group>"; };
+		FCB7EE0813584E5F0044D223 /* RPG-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RPG-Info.plist"; sourceTree = "<group>"; };
+		FCB7EE0C135854270044D223 /* en */ = {isa = PBXFileReference; fileEncoding = 2415919360; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		FCB7EE0F135854340044D223 /* de */ = {isa = PBXFileReference; fileEncoding = 2415919360; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		FCD52871134B1AF000F31B32 /* BGGradientTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGradientTheme.h; sourceTree = "<group>"; };
 		FCD52872134B1AF000F31B32 /* BGGradientTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGradientTheme.m; sourceTree = "<group>"; };
 		FCD52873134B1AF000F31B32 /* BGHUDButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDButtonCell.h; sourceTree = "<group>"; };
@@ -146,11 +149,12 @@
 			isa = PBXGroup;
 			children = (
 				FCD52884134B323000F31B32 /* Icon.icns */,
-				FC7C41B01346031700D37AC5 /* RPG-Info.plist */,
+				FCB7EE0813584E5F0044D223 /* RPG-Info.plist */,
 				FC7C41B11346031700D37AC5 /* InfoPlist.strings */,
 				FC7C41B41346031700D37AC5 /* RPG-Prefix.pch */,
 				FC7C41B51346031700D37AC5 /* main.m */,
 				FC7C41B71346031700D37AC5 /* Credits.rtf */,
+				FCB7EE0D135854270044D223 /* ServicesMenu.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -243,6 +247,7 @@
 				FC7C41B91346031700D37AC5 /* Credits.rtf in Resources */,
 				FC9F4FB41346267B00EE9317 /* MainMenu.xib in Resources */,
 				FCD52885134B323000F31B32 /* Icon.icns in Resources */,
+				FCB7EE0B135854270044D223 /* ServicesMenu.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +299,15 @@
 				FC270F07134F2E350037A976 /* de */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		FCB7EE0D135854270044D223 /* ServicesMenu.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCB7EE0C135854270044D223 /* en */,
+				FCB7EE0F135854340044D223 /* de */,
+			);
+			name = ServicesMenu.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

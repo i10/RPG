@@ -108,12 +108,16 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+	// register service provider
+	[NSApp setServicesProvider:self.passwordGenerator];
+	
 	// update segmented control
 	[self.lengthControl setSelectedSegment:lengthToSegmentIndex(self.passwordGenerator.length)];
 	
 	// generate password
 	self.password = [passwordGenerator generate];
 	[self.window makeFirstResponder:self.output];
+	
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification;

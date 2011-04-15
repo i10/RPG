@@ -34,4 +34,9 @@
 - (NSString *)generateHashFromString:(NSString *)string;
 - (void)save;
 
+// service methods
+- (void)generatePassword:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error;
+- (void)generateHash:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error;
+
+
 @end
