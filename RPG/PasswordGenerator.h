@@ -8,12 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class PasswordGenerator;
-@protocol PasswordGeneratorDelegate
-- (void)passwordGenerator:(PasswordGenerator *)passwordGenerator didGeneratePassword:(NSString *)password;
-@end
-
-
 @interface PasswordGenerator : NSObject {
 	NSUInteger length;
 	NSString *exclude;
@@ -23,8 +17,6 @@
 	BOOL useSymbols2;
 	
 	@private
-	id<PasswordGeneratorDelegate> delegate;
-	
 	NSMutableString *capitalConsonants;
 	NSMutableString *consonants;
 	NSMutableString *vowels;
@@ -38,9 +30,7 @@
 @property(assign) BOOL useSymbols1;
 @property(assign) BOOL useSymbols2;
 
-@property(assign) IBOutlet id<PasswordGeneratorDelegate> delegate;
-
-- (void)generate;
+- (NSString *)generate;
 - (NSString *)generateHashFromString:(NSString *)string;
 - (void)save;
 

@@ -30,11 +30,10 @@
 @implementation PasswordGenerator
 
 @synthesize length, exclude, useCapitals, useNumbers, useSymbols1, useSymbols2;
-@synthesize delegate;
 
 
 // generate a password
-- (void)generate;
+- (NSString *)generate;
 {
 	// save
 	[self save];
@@ -46,7 +45,7 @@
 	BOOL hasLetters = [consonants length] > 0 || [vowels length] > 0;
 	BOOL hasSymbols = [symbols length] > 0;
 	
-	if(!hasLetters && !hasSymbols) return;
+	if(!hasLetters && !hasSymbols) return @"";
 	
 	NSMutableString *chars = [NSMutableString string];
 	int charsRemaining = (int)self.length;
@@ -76,7 +75,7 @@
 	}
 
 	// inform delegate
-	[self.delegate passwordGenerator:self didGeneratePassword:chars];
+	return [[chars copy] autorelease];
 }
 
 // generate a hash from a given string

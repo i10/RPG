@@ -55,7 +55,8 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 - (IBAction)setPasswordLength:(NSButton *)sender;
 {
 	passwordGenerator.length = sender.title.intValue;
-	[passwordGenerator generate];
+	self.password = [passwordGenerator generate];
+	[self.window makeFirstResponder:self.output];
 }
 
 - (IBAction)copyHash:(id)sender;
@@ -69,12 +70,14 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 
 - (IBAction)generate:(id)sender;
 {
-	[passwordGenerator generate];
+	self.password = [passwordGenerator generate];
+	[self.window makeFirstResponder:self.output];
 }
 
 - (IBAction)generateAndCopy:(id)sender;
 {
-	[passwordGenerator generate];
+	self.password = [passwordGenerator generate];
+	[self.window makeFirstResponder:self.output];
 	
 	NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
 	
@@ -86,13 +89,15 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 - (IBAction)generateFromSegment:(NSSegmentedControl *)segmentControl;
 {
 	passwordGenerator.length = segmentIndexToLength([segmentControl selectedSegment]);
-	[passwordGenerator generate];
+	self.password = [passwordGenerator generate];
+	[self.window makeFirstResponder:self.output];
 }
 
 - (IBAction)generateFromMenu:(NSMenuItem *)menuItem;
 {
 	passwordGenerator.length = [menuItem tag];
-	[passwordGenerator generate];
+	self.password = [passwordGenerator generate];
+	[self.window makeFirstResponder:self.output];
 
 	// update segmented control
 	[self.lengthControl setSelectedSegment:lengthToSegmentIndex(self.passwordGenerator.length)];
@@ -107,7 +112,8 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	[self.lengthControl setSelectedSegment:lengthToSegmentIndex(self.passwordGenerator.length)];
 	
 	// generate password
-	[passwordGenerator generate];
+	self.password = [passwordGenerator generate];
+	[self.window makeFirstResponder:self.output];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification;
@@ -199,14 +205,6 @@ NSInteger lengthToSegmentIndex(NSInteger length) {
 	if([notification object] == self.window) {
 		[NSApp terminate:self];
 	}
-}
-
-#pragma mark PasswordGeneratorDelegate
-
-- (void)passwordGenerator:(PasswordGenerator *)thePasswordGenerator didGeneratePassword:(NSString *)thePassword;
-{
-	self.password = thePassword;
-	[self.window makeFirstResponder:self.output];
 }
 
 @end

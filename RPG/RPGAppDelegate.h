@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "PasswordGenerator.h"
 
-@interface RPGAppDelegate : NSObject <NSApplicationDelegate, PasswordGeneratorDelegate> {
+@interface RPGAppDelegate : NSObject <NSApplicationDelegate> {
 	NSString *password;
 	NSString *hash;
 @private
