@@ -14,6 +14,8 @@
 		FC7C41BC1346031700D37AC5 /* RPGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7C41BB1346031700D37AC5 /* RPGAppDelegate.m */; };
 		FC9F4FB41346267B00EE9317 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9F4FB21346267B00EE9317 /* MainMenu.xib */; };
 		FC9F4FB9134632C400EE9317 /* PasswordGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */; };
+		FCB7EDEC1358400E0044D223 /* NSMutableString+DeleteCharactersFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB7EDEB1358400E0044D223 /* NSMutableString+DeleteCharactersFromString.m */; };
+		FCB7EDF0135841A90044D223 /* NSString+RandomCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB7EDEF135841A90044D223 /* NSString+RandomCharacter.m */; };
 		FCD5287E134B1AF000F31B32 /* BGGradientTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD52872134B1AF000F31B32 /* BGGradientTheme.m */; };
 		FCD5287F134B1AF000F31B32 /* BGHUDButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD52874134B1AF000F31B32 /* BGHUDButtonCell.m */; };
 		FCD52880134B1AF000F31B32 /* BGHUDSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD52877134B1AF000F31B32 /* BGHUDSegmentedCell.m */; };
@@ -53,6 +55,10 @@
 		FC9F4FB31346267B00EE9317 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordGenerator.h; sourceTree = "<group>"; };
 		FC9F4FB8134632C400EE9317 /* PasswordGenerator.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PasswordGenerator.m; sourceTree = "<group>"; };
+		FCB7EDEA1358400E0044D223 /* NSMutableString+DeleteCharactersFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+DeleteCharactersFromString.h"; sourceTree = "<group>"; };
+		FCB7EDEB1358400E0044D223 /* NSMutableString+DeleteCharactersFromString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+DeleteCharactersFromString.m"; sourceTree = "<group>"; };
+		FCB7EDEE135841A90044D223 /* NSString+RandomCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RandomCharacter.h"; sourceTree = "<group>"; };
+		FCB7EDEF135841A90044D223 /* NSString+RandomCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RandomCharacter.m"; sourceTree = "<group>"; };
 		FCD52871134B1AF000F31B32 /* BGGradientTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGradientTheme.h; sourceTree = "<group>"; };
 		FCD52872134B1AF000F31B32 /* BGGradientTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGradientTheme.m; sourceTree = "<group>"; };
 		FCD52873134B1AF000F31B32 /* BGHUDButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHUDButtonCell.h; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 		FC7C41AE1346031700D37AC5 /* RPG */ = {
 			isa = PBXGroup;
 			children = (
+				FCB7EDF1135841C90044D223 /* Helpers */,
 				FCEF3BF4134DD7860086533A /* sha1.h */,
 				FCEF3BF3134DD7860086533A /* sha1.c */,
 				FC9F4FB7134632C400EE9317 /* PasswordGenerator.h */,
@@ -146,6 +153,17 @@
 				FC7C41B71346031700D37AC5 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCB7EDF1135841C90044D223 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FCB7EDEE135841A90044D223 /* NSString+RandomCharacter.h */,
+				FCB7EDEF135841A90044D223 /* NSString+RandomCharacter.m */,
+				FCB7EDEA1358400E0044D223 /* NSMutableString+DeleteCharactersFromString.h */,
+				FCB7EDEB1358400E0044D223 /* NSMutableString+DeleteCharactersFromString.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		FCD52870134B1AF000F31B32 /* BGHUD */ = {
@@ -245,6 +263,8 @@
 				FCD52882134B1AF000F31B32 /* BGTheme.m in Sources */,
 				FCD52883134B1AF000F31B32 /* BGThemeManager.m in Sources */,
 				FCEF3BF5134DD7860086533A /* sha1.c in Sources */,
+				FCB7EDEC1358400E0044D223 /* NSMutableString+DeleteCharactersFromString.m in Sources */,
+				FCB7EDF0135841A90044D223 /* NSString+RandomCharacter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

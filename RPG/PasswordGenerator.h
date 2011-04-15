@@ -24,6 +24,11 @@
 	
 	@private
 	id<PasswordGeneratorDelegate> delegate;
+	
+	NSMutableString *capitalConsonants;
+	NSMutableString *consonants;
+	NSMutableString *vowels;
+	NSMutableString *symbols;
 }
 
 @property(assign) NSUInteger length;
