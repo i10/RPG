@@ -915,7 +915,6 @@
 							<string key="NSFrame">{{177, 18}, {154, 25}}</string>
 							<reference key="NSSuperview" ref="966669742"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="125587195">
@@ -1087,12 +1086,12 @@
 				<int key="NSWindowStyleMask">8215</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{200, 200}, {291, 212}}</string>
-				<int key="NSWTFlags">611844096</int>
+				<int key="NSWTFlags">1685585920</int>
 				<string key="NSWindowTitle">Random Password Generator</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
 				<object class="NSView" key="NSWindowView" id="454833876">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">301</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1101,6 +1100,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 174}, {257, 18}}</string>
 							<reference key="NSSuperview" ref="454833876"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="727338773"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<bool key="NSEnabled">YES</bool>
@@ -1123,6 +1123,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 129}, {108, 17}}</string>
 							<reference key="NSSuperview" ref="454833876"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="503881893"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<bool key="NSEnabled">YES</bool>
@@ -1141,6 +1142,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 104}, {97, 17}}</string>
 							<reference key="NSSuperview" ref="454833876"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="1069064357"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<bool key="NSEnabled">YES</bool>
@@ -1159,6 +1161,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 79}, {159, 17}}</string>
 							<reference key="NSSuperview" ref="454833876"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="397443044"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<bool key="NSEnabled">YES</bool>
@@ -1177,6 +1180,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 54}, {158, 17}}</string>
 							<reference key="NSSuperview" ref="454833876"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="981443218"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<bool key="NSEnabled">YES</bool>
@@ -1207,6 +1211,7 @@
 							</object>
 							<string key="NSFrame">{{210, 64}, {48, 57}}</string>
 							<reference key="NSSuperview" ref="454833876"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="353822059"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="725646246">
@@ -1236,6 +1241,7 @@
 							</object>
 							<string key="NSFrame">{{195, 73}, {78, 78}}</string>
 							<reference key="NSSuperview" ref="454833876"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="504910648"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="905255790">
@@ -1257,6 +1263,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{18, 16}, {255, 32}}</string>
 							<reference key="NSSuperview" ref="454833876"/>
+							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="942757812">
 								<int key="NSCellFlags">67239424</int>
@@ -1275,6 +1282,8 @@
 						</object>
 					</object>
 					<string key="NSFrame">{{7, 11}, {291, 212}}</string>
+					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="995510524"/>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
@@ -1503,14 +1512,6 @@
 						<reference key="destination" ref="605467061"/>
 					</object>
 					<int key="connectionID">669</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="605467061"/>
-						<reference key="destination" ref="976324537"/>
-					</object>
-					<int key="connectionID">670</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -3234,17 +3235,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">PasswordGenerator</string>
 					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">delegate</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">delegate</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">delegate</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/PasswordGenerator.h</string>
