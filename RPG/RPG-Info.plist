@@ -19,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.01</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -61,11 +61,11 @@
 			<string>generateHash</string>
 			<key>NSPortName</key>
 			<string>RPG</string>
-			<key>NSSendTypes</key>
+			<key>NSReturnTypes</key>
 			<array>
 				<string>NSStringPboardType</string>
 			</array>
-			<key>NSReturnTypes</key>
+			<key>NSSendTypes</key>
 			<array>
 				<string>NSStringPboardType</string>
 			</array>
