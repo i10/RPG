@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">0</int>
-		<string key="IBDocument.SystemVersion">11A511</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1900</string>
-		<string key="IBDocument.AppKitVersion">1138</string>
-		<string key="IBDocument.HIToolboxVersion">566.00</string>
+		<int key="IBDocument.SystemTarget">1060</int>
+		<string key="IBDocument.SystemVersion">11C73</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
+		<string key="IBDocument.AppKitVersion">1138.23</string>
+		<string key="IBDocument.HIToolboxVersion">567.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">1900</string>
+			<string key="NS.object.0">1938</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSSegmentedControl</string>
@@ -541,7 +541,7 @@
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="966669742">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">301</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSTextField" id="958470293">
@@ -954,7 +954,8 @@
 							</object>
 						</object>
 					</array>
-					<string key="NSFrame">{{7, 11}, {351, 378}}</string>
+					<string key="NSFrameSize">{351, 378}</string>
+					<reference key="NSSuperview"/>
 					<reference key="NSNextKeyView" ref="958470293"/>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
@@ -1165,6 +1166,22 @@
 			<array class="NSMutableArray" key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
+						<string key="label">terminate:</string>
+						<reference key="source" ref="1050"/>
+						<reference key="destination" ref="632727374"/>
+					</object>
+					<int key="connectionID">449</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="1021"/>
+						<reference key="destination" ref="976324537"/>
+					</object>
+					<int key="connectionID">495</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
 						<string key="label">performMiniaturize:</string>
 						<reference key="source" ref="1014"/>
 						<reference key="destination" ref="1011231497"/>
@@ -1285,14 +1302,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">terminate:</string>
-						<reference key="source" ref="1050"/>
-						<reference key="destination" ref="632727374"/>
-					</object>
-					<int key="connectionID">449</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">uppercaseWord:</string>
 						<reference key="source" ref="1014"/>
 						<reference key="destination" ref="1060694897"/>
@@ -1317,67 +1326,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="1021"/>
-						<reference key="destination" ref="976324537"/>
-					</object>
-					<int key="connectionID">495</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">passwordGenerator</string>
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="605467061"/>
 					</object>
 					<int key="connectionID">669</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: useNumbers</string>
-						<reference key="source" ref="87687088"/>
-						<reference key="destination" ref="605467061"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="87687088"/>
-							<reference key="NSDestination" ref="605467061"/>
-							<string key="NSLabel">value: useNumbers</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">useNumbers</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">697</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: useSymbols1</string>
-						<reference key="source" ref="803563377"/>
-						<reference key="destination" ref="605467061"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="803563377"/>
-							<reference key="NSDestination" ref="605467061"/>
-							<string key="NSLabel">value: useSymbols1</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">useSymbols1</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">699</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: useSymbols2</string>
-						<reference key="source" ref="861870196"/>
-						<reference key="destination" ref="605467061"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="861870196"/>
-							<reference key="NSDestination" ref="605467061"/>
-							<string key="NSLabel">value: useSymbols2</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">useSymbols2</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">702</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -1418,22 +1371,6 @@
 						<reference key="destination" ref="959069854"/>
 					</object>
 					<int key="connectionID">991</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="959069854"/>
-						<reference key="destination" ref="976324537"/>
-					</object>
-					<int key="connectionID">992</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">makeKeyAndOrderFront:</string>
-						<reference key="source" ref="959069854"/>
-						<reference key="destination" ref="238522557"/>
-					</object>
-					<int key="connectionID">993</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1482,22 +1419,6 @@
 						<reference key="destination" ref="947528169"/>
 					</object>
 					<int key="connectionID">1016</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: useCapitals</string>
-						<reference key="source" ref="269689882"/>
-						<reference key="destination" ref="605467061"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="269689882"/>
-							<reference key="NSDestination" ref="605467061"/>
-							<string key="NSLabel">value: useCapitals</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">useCapitals</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1029</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -1564,6 +1485,118 @@
 					<int key="connectionID">1067</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">generateAndCopy:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="260229367"/>
+					</object>
+					<int key="connectionID">1088</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="364687683"/>
+						<reference key="destination" ref="976324537"/>
+					</object>
+					<int key="connectionID">1080</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: useCapitals</string>
+						<reference key="source" ref="269689882"/>
+						<reference key="destination" ref="605467061"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="269689882"/>
+							<reference key="NSDestination" ref="605467061"/>
+							<string key="NSLabel">value: useCapitals</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">useCapitals</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1029</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: useNumbers</string>
+						<reference key="source" ref="87687088"/>
+						<reference key="destination" ref="605467061"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="87687088"/>
+							<reference key="NSDestination" ref="605467061"/>
+							<string key="NSLabel">value: useNumbers</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">useNumbers</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">697</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: useSymbols1</string>
+						<reference key="source" ref="803563377"/>
+						<reference key="destination" ref="605467061"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="803563377"/>
+							<reference key="NSDestination" ref="605467061"/>
+							<string key="NSLabel">value: useSymbols1</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">useSymbols1</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">699</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: hash</string>
+						<reference key="source" ref="799263154"/>
+						<reference key="destination" ref="976324537"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="799263154"/>
+							<reference key="NSDestination" ref="976324537"/>
+							<string key="NSLabel">value: hash</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">hash</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1077</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: useSymbols2</string>
+						<reference key="source" ref="861870196"/>
+						<reference key="destination" ref="605467061"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="861870196"/>
+							<reference key="NSDestination" ref="605467061"/>
+							<string key="NSLabel">value: useSymbols2</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">useSymbols2</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">702</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="959069854"/>
+						<reference key="destination" ref="976324537"/>
+					</object>
+					<int key="connectionID">992</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">makeKeyAndOrderFront:</string>
+						<reference key="source" ref="959069854"/>
+						<reference key="destination" ref="238522557"/>
+					</object>
+					<int key="connectionID">993</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: exclude</string>
 						<reference key="source" ref="260030463"/>
@@ -1590,38 +1623,6 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: password</string>
-						<reference key="source" ref="9000542"/>
-						<reference key="destination" ref="976324537"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="9000542"/>
-							<reference key="NSDestination" ref="976324537"/>
-							<string key="NSLabel">value: password</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">password</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1076</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: hash</string>
-						<reference key="source" ref="799263154"/>
-						<reference key="destination" ref="976324537"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="799263154"/>
-							<reference key="NSDestination" ref="976324537"/>
-							<string key="NSLabel">value: hash</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">hash</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1077</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: password</string>
 						<reference key="source" ref="626108935"/>
 						<reference key="destination" ref="976324537"/>
 						<object class="NSNibBindingConnector" key="connector">
@@ -1640,20 +1641,20 @@
 					<int key="connectionID">1079</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="364687683"/>
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: password</string>
+						<reference key="source" ref="9000542"/>
 						<reference key="destination" ref="976324537"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="9000542"/>
+							<reference key="NSDestination" ref="976324537"/>
+							<string key="NSLabel">value: password</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">password</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
 					</object>
-					<int key="connectionID">1080</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">generateAndCopy:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="260229367"/>
-					</object>
-					<int key="connectionID">1088</int>
+					<int key="connectionID">1076</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2608,118 +2609,12 @@
 			<nil key="sourceID"/>
 			<int key="maxID">1088</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">BGHUDButtonCell</string>
-					<string key="superclassName">NSButtonCell</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BGHUDButtonCell.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">BGHUDSegmentedCell</string>
-					<string key="superclassName">NSSegmentedCell</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BGHUDSegmentedCell.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">BGHUDTextFieldCell</string>
-					<string key="superclassName">NSTextFieldCell</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BGHUDTextFieldCell.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">PasswordGenerator</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/PasswordGenerator.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">RPGAppDelegate</string>
-					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="copyHash:">id</string>
-						<string key="generate:">id</string>
-						<string key="generateAndCopy:">id</string>
-						<string key="generateFromMenu:">NSMenuItem</string>
-						<string key="openWebsite:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="copyHash:">
-							<string key="name">copyHash:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="generate:">
-							<string key="name">generate:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="generateAndCopy:">
-							<string key="name">generateAndCopy:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="generateFromMenu:">
-							<string key="name">generateFromMenu:</string>
-							<string key="candidateClassName">NSMenuItem</string>
-						</object>
-						<object class="IBActionInfo" key="openWebsite:">
-							<string key="name">openWebsite:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="aboutWindow">NSWindow</string>
-						<string key="lengthControl">NSSegmentedControl</string>
-						<string key="mainView">NSView</string>
-						<string key="output">NSTextField</string>
-						<string key="passwordGenerator">PasswordGenerator</string>
-						<string key="window">NSWindow</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="aboutWindow">
-							<string key="name">aboutWindow</string>
-							<string key="candidateClassName">NSWindow</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="lengthControl">
-							<string key="name">lengthControl</string>
-							<string key="candidateClassName">NSSegmentedControl</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mainView">
-							<string key="name">mainView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="output">
-							<string key="name">output</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="passwordGenerator">
-							<string key="name">passwordGenerator</string>
-							<string key="candidateClassName">PasswordGenerator</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="window">
-							<string key="name">window</string>
-							<string key="candidateClassName">NSWindow</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/RPGAppDelegate.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
+		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
-			<real value="0.0" key="NS.object.0"/>
+			<real value="1060" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
