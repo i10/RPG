@@ -1,0 +1,7 @@
+Version 1.01
+Added Entitlements
+Filter for bad words in the generated password
+Updated Icon
+
+---------------------------------------------------------------------------
+Wishlist
