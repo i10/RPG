@@ -24,6 +24,7 @@
 - (void)updateChars;
 - (NSString *)generateWordWithLength:(NSUInteger)length;
 - (char)generateSymbol;
+- (NSString *)generatePassword;
 @end
 
 
@@ -40,42 +41,25 @@
 	
 	// update characters
 	[self updateChars];
-	
-	// are any character sets empty?
-	BOOL hasLetters = [consonants length] > 0 || [vowels length] > 0;
-	BOOL hasSymbols = [symbols length] > 0;
-	
-	if(!hasLetters && !hasSymbols) return @"";
-	
-	NSMutableString *chars = [NSMutableString string];
-	int charsRemaining = (int)self.length;
-	int wordLength;
-	while(charsRemaining > 0) {
 		
-		// add a word
-		if(hasLetters && charsRemaining > 1) {
-			wordLength = 2;
-			if(charsRemaining > 2) wordLength += (int)(random()%MIN(charsRemaining-2, 4));
-			
-			// avoid 2 symbols at the end
-			if(charsRemaining-wordLength == 2) wordLength++;
-
-			// special case: we do not allow special characters but would have only 1 char remaining -> make the word longer
-			if(!hasSymbols && charsRemaining-wordLength == 1) wordLength++;
-			
-			[chars appendString:[self generateWordWithLength:wordLength]];
-			charsRemaining -= wordLength;
+	// empty dictionary
+	if(consonants.length == 0 && vowels.length == 0 && symbols.length == 0) return @"";
+	
+	// generate the password
+	NSString *password;
+	BOOL passwordOK;
+	do {
+		password = [self generatePassword];
+		passwordOK = YES;
+		for(NSString *badword in badwords) {
+			if([password rangeOfString:badword options:NSCaseInsensitiveSearch].location != NSNotFound) {
+				passwordOK = NO;
+				break;
+			}
 		}
-		 
-		 // add a symbol
-		if(hasSymbols && charsRemaining > 0) {
-			[chars appendFormat:@"%c", [self generateSymbol]];
-			charsRemaining -= 1;
-		}
-	}
-
-	// inform delegate
-	return [[chars copy] autorelease];
+	} while(!passwordOK);
+	
+	return password;
 }
 
 // generate a hash from a given string
@@ -122,14 +106,51 @@
 
 #pragma mark service methods
 
-- (void)generatePassword:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error;
+// generate a password with the given settings
+- (NSString *)generatePassword;
+{
+	// are any character sets empty?
+	BOOL hasLetters = [consonants length] > 0 || [vowels length] > 0;
+	BOOL hasSymbols = [symbols length] > 0;
+
+	NSMutableString *chars = [NSMutableString string];
+	int charsRemaining = (int)self.length;
+	int wordLength;
+	while(charsRemaining > 0) {
+		
+		// add a word
+		if(hasLetters && charsRemaining > 1) {
+			wordLength = 2;
+			if(charsRemaining > 2) wordLength += (int)(random()%MIN(charsRemaining-2, 4));
+			
+			// avoid 2 symbols at the end
+			if(charsRemaining-wordLength == 2) wordLength++;
+			
+			// special case: we do not allow special characters but would have only 1 char remaining -> make the word longer
+			if(!hasSymbols && charsRemaining-wordLength == 1) wordLength++;
+			
+			[chars appendString:[self generateWordWithLength:wordLength]];
+			charsRemaining -= wordLength;
+		}
+		
+		// add a symbol
+		if(hasSymbols && charsRemaining > 0) {
+			[chars appendFormat:@"%c", [self generateSymbol]];
+			charsRemaining -= 1;
+		}
+	}
+	
+	return [[chars copy] autorelease];
+}
+
+- (void)generatePassword:(NSPasteboard *)pasteboard userData:(NSString *)userData error:(NSString **)error;
 {
 	// generate password
 	NSString *password = [self generate];
-	
+
 	// Write the password string onto the pasteboard.
-	[pboard clearContents];
-	[pboard setString:password forType:NSStringPboardType];
+	[pasteboard clearContents];
+	[pasteboard setString:password forType:NSStringPboardType];
 //	[pboard writeObjects:[NSArray arrayWithObject:password]];
 }
 
@@ -238,6 +259,11 @@
 		useNumbers = [defaults boolForKey:@"useNumbers"];
 		useSymbols1 = [defaults boolForKey:@"useSymbols1"];
 		useSymbols2 = [defaults boolForKey:@"useSymbols2"];
+		
+		// load bad words
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"badwords" ofType:@"txt"];
+		NSString *badwordsString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+		badwords = [[badwordsString componentsSeparatedByString:@"\n"] retain];
 		
     }
     return self;

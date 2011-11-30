@@ -21,6 +21,8 @@
 	NSMutableString *consonants;
 	NSMutableString *vowels;
 	NSMutableString *symbols;
+	
+	NSArray *badwords;
 }
 
 @property(assign) NSUInteger length;
