@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC6E4063148659DC0088FAF9 /* badwords.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC6E4062148659DC0088FAF9 /* badwords.txt */; };
 		FC7C41A91346031700D37AC5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7C41A81346031700D37AC5 /* Cocoa.framework */; };
 		FC7C41B31346031700D37AC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC7C41B11346031700D37AC5 /* InfoPlist.strings */; };
 		FC7C41B61346031700D37AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7C41B51346031700D37AC5 /* main.m */; };
@@ -41,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		FC270F07134F2E350037A976 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FC6E4060148657BE0088FAF9 /* Changelog.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Changelog.txt; sourceTree = "<group>"; };
+		FC6E4061148658060088FAF9 /* RPG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RPG.entitlements; sourceTree = "<group>"; };
+		FC6E4062148659DC0088FAF9 /* badwords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = badwords.txt; sourceTree = "<group>"; };
 		FC7C41A41346031700D37AC5 /* RPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7C41A81346031700D37AC5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FC7C41AB1346031700D37AC5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -148,6 +152,9 @@
 		FC7C41AF1346031700D37AC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC6E4060148657BE0088FAF9 /* Changelog.txt */,
+				FC6E4061148658060088FAF9 /* RPG.entitlements */,
+				FC6E4062148659DC0088FAF9 /* badwords.txt */,
 				FCD52884134B323000F31B32 /* Icon.icns */,
 				FCB7EE0813584E5F0044D223 /* RPG-Info.plist */,
 				FC7C41B11346031700D37AC5 /* InfoPlist.strings */,
@@ -218,6 +225,7 @@
 		FC7C419B1346031700D37AC5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = RWTH;
 			};
 			buildConfigurationList = FC7C419E1346031700D37AC5 /* Build configuration list for PBXProject "RPG" */;
@@ -248,6 +256,7 @@
 				FC9F4FB41346267B00EE9317 /* MainMenu.xib in Resources */,
 				FCD52885134B323000F31B32 /* Icon.icns in Resources */,
 				FCB7EE0B135854270044D223 /* ServicesMenu.strings in Resources */,
+				FC6E4063148659DC0088FAF9 /* badwords.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +358,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = RPG/RPG.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer: Jonathan Diehl (WZYP9Y9TXW)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -360,6 +371,7 @@
 				GCC_PREFIX_HEADER = "RPG/RPG-Prefix.pch";
 				INFOPLIST_FILE = "RPG/RPG-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2D499794-0F6B-458B-9C39-471D89130670";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -368,6 +380,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = RPG/RPG.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer: Jonathan Diehl (WZYP9Y9TXW)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -379,6 +393,7 @@
 				GCC_PREFIX_HEADER = "RPG/RPG-Prefix.pch";
 				INFOPLIST_FILE = "RPG/RPG-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2D499794-0F6B-458B-9C39-471D89130670";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
