@@ -1,0 +1,3 @@
+[submodule "BGHUDAppKit"]
+	path = BGHUDAppKit
+	url = https://github.com/binarygod/BGHUDAppKit.git
